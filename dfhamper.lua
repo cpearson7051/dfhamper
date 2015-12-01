@@ -1,4 +1,4 @@
---scripts/dfhamper.lua
+--scripts/hamper.lua
 --finds all clothes in stockpile and workshop
 --origiinal author: Christoth
 
@@ -30,8 +30,9 @@ for k, v in ipairs(df.global.world.buildings.all) do
   local str = utils.getBuildingName(v)
   if string.find(str, "Stockpile") then
     --print('stockpile found: '..str)
-	  table.insert(piles, v)
-	
+    table.insert(piles, v)
+  
+ 
   
   elseif string.find(str, "Clothier") or string.find(str, 'Leather') then
     --print('workshop found '..str)
@@ -45,9 +46,20 @@ for k, v in ipairs(piles) do
   local contents = dfhack.buildings.getStockpileContents(v)
   
   for i, j in ipairs(contents) do
-    --print(j)
-   -- local stra = get_type(j)
+    --print(j._type)
+    --local stra = get_type(j)
     --print(stra)
+    local thing = get_type(j)
+    --print(thing)
+    if thing == 'bin' then
+      print('found a bin')
+      print(thing)
+      local bincon = dfhack.items.getContainedItems(j)
+      for m, n in ipairs(bincon) do
+        count_clothes(n)
+        print('got here')
+      end
+    end
     count_clothes(j)
         
   end
