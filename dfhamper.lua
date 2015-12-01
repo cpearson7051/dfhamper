@@ -52,12 +52,12 @@ for k, v in ipairs(piles) do
     local thing = get_type(j)
     --print(thing)
     if thing == 'bin' then
-      print('found a bin')
-      print(thing)
+      --print('found a bin')
+      --print(thing)
       local bincon = dfhack.items.getContainedItems(j)
       for m, n in ipairs(bincon) do
         count_clothes(n)
-        print('got here')
+        --print('got here')
       end
     end
     count_clothes(j)
