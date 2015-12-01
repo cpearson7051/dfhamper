@@ -1,10 +1,10 @@
---scripts/hamper.lua
---finds all clothes in stockpile and workshop
---original author: Christoth
+-- finds all clothes in stockpile and workshop
+-- original author: Christoth
+-- scripts/hamper.lua
 
 --[[=begin
 
-DFHamper
+dfhamper
 ========
 Searches through your stockpiles as well as clothier and leather work
 workshops for unowned articles of clothing, and returns a count of each
